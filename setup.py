@@ -1,5 +1,8 @@
 from setuptools import setup
-import io, re, os
+import io
+import re
+import os
+
 
 def read(*names, **kwargs):
     with io.open(
@@ -7,6 +10,7 @@ def read(*names, **kwargs):
         encoding=kwargs.get("encoding", "utf8")
     ) as fp:
         return fp.read()
+
 
 def find_version(*file_paths):
     version_file = read(*file_paths)
@@ -26,6 +30,7 @@ setup(name='pycamhd.motionmetadata',
       author='Aaron Marburg',
       author_email='amarburg@apl.washington.edu',
       license='MIT',
+      python_requires='>=3',
       packages=['pycamhd.motionmetadata'],
       install_requires=['pandas'],
       setup_requires=['pytest-runner'],

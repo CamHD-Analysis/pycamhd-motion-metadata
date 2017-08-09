@@ -65,10 +65,12 @@ class RegionFile:
         match = re.match(prog, self.basename)
 
         if match:
-            return datetime.datetime(int(match.group(1)), int(match.group(2)),
+            dt = datetime.datetime(int(match.group(1)), int(match.group(2)),
                                      int(match.group(3)), int(match.group(4)),
                                      int(match.group(5)), int(match.group(6)))
+            return dt
 
+        return None
 
 
     def save_json(self, outfile):

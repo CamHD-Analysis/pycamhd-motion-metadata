@@ -61,7 +61,7 @@ class RegionFile:
 
     def datetime(self):
 
-        prog = re.compile("CAMHDA301-(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z")
+        prog = re.compile("CAMHDA301-(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})")
         match = re.match(prog, self.basename)
 
         if match:

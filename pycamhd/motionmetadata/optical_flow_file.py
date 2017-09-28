@@ -49,6 +49,9 @@ def flatten_structure(valid):
                       .rename(columns={0: 'scale', 1: 'theta',
                                         2: 'trans_x', 3: 'trans_y'})
 
+    if not 'trans_x' in valid or not 'trans_y' in valid:
+        return pd.DataFrame({'valid' : []})
+
     valid['trans'] = valid.trans_x**2 + valid.trans_y**2
 
     return valid
